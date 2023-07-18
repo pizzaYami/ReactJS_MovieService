@@ -1,5 +1,16 @@
 <!DOCTYPE html>
 <body>
-  <div><span></span></div>
+  <button id="btn">Click me</button>
+  <span>0번 클릭을 했다.</span>
 </body>
+<script>
+  let count = 0;
+  const button = document.getElementById("btn");
+  const span = document.querySelector("span");
+  function addCount(){
+    count += 1;
+    span.innerText = `${count}번 클릭을 했다.`
+  }
+  button.addEventListener("click", addCount)
+</script>
 </html>
