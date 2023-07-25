@@ -1,7 +1,16 @@
 <!DOCTYPE html>
 <body>
-  
+  <button id="btn">Click me</button>
+  <span>0번 클릭을 했다.</span>
 </body>
-<script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
-<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
-</html>9
+<script>
+  let count = 0;
+  const button = document.getElementById("btn");
+  const span = document.querySelector("span");
+  function addCount(){
+    count += 1;
+    span.innerText = `${count}번 클릭을 했다.`
+  }
+  button.addEventListener("click", addCount)
+</script>
+</html>
