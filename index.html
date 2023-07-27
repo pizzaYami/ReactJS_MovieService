@@ -54,53 +54,14 @@
       </div>
     );
   }
+  function KmToMiles() {}
   function App() {
-    const [amount, setAmount] = React.useState();
-    const [inverted, setInverted] = React.useState(false);
-
-    const onChange = (event) => {
-      setAmount(event.target.value);
-    };
-    const reset = () => {
-      setAmount(0);
-    };
     return (
       <div>
         <h1 className="hi" ㅋ>
           Super Converter
         </h1>
-        <div>
-          <label htmlFor="amount">Minutes</label>
-          <input
-            id="amount"
-            type="number"
-            placeholder="Minutes"
-            value={inverted ? amount * 60 : amount}
-            onChange={onChange}
-            disabled={inverted}
-          ></input>
-        </div>
-        <div>
-          <label htmlFor="hours">Hours</label>
-          <input
-            id="hours"
-            type="number"
-            placeholder="Hours"
-            // toFixed하면 string으로 변환되는데 0이어도 0.00으로 뜬다 그래서 number로 변경해줘서 깔끔하게 처리
-            value={inverted ? amount : Number((amount / 60).toFixed(2))}
-            onChange={onChange}
-            disabled={!inverted}
-          ></input>
-        </div>
-        <button onClick={reset}>Reset</button>
-        <button
-          onClick={() => {
-            setInverted(!inverted);
-            reset();
-          }}
-        >
-          {inverted ? "Turn back" : "Invert"}
-        </button>
+        <MinutesToHours />
       </div>
     );
   }
